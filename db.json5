@@ -1,0 +1,6 @@
+{
+  "productList": [
+    { "id": "1", "title": "realme 9", "price": 19000 },
+    { "id": "2", "title": "samsa", "price": 119 }
+  ]
+}
