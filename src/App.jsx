@@ -11,6 +11,17 @@ function App() {
     const onClickCounter = () => {
         setCount(val => val + 1);
     };
+
+    const onClickAddProduct = (event) => {
+        event.preventDefault();
+        const productData = new FormData();
+        fetch('http://localhost:3000/productList', {
+            method: 'POST',
+            body: productData
+        })
+            .then();
+    }
+
     const onChange = (event) => {
         setValue(event.target.value);
     };
@@ -51,7 +62,7 @@ function App() {
                 <label htmlFor="price">Price:</label>
                 <input type="number" name="price"/>
             </p>
-            <button type="submit">Add product</button>
+            <button type="submit" onClick={onClickAddProduct}>Add product</button>
         </form>
         <button id="getProductList" onClick={getProductList}>Get products</button>
         <ul id="productList">{productList}</ul>
